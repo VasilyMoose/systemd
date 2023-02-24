@@ -1,11 +1,11 @@
 #!/bin/bash
-mv watchlog /var/log/
+mv /root/systemd/watchlog/watchlog.log /var/log/
 cd /etc/sysconfig/
-mv watchlog.sh /opt/
+mv /root/systemd/watchlog/watchlog.sh /opt/
 chmod +x /opt/watchlog.sh
  
-mv watchlog.timer /etc/systemd/system/
-mv watchlog.service /etc/systemd/system/
+mv /root/systemd/watchlog/watchlog.timer /etc/systemd/system/
+mv /root/systemd/watchlog/watchlog.service /etc/systemd/system/
 
-systemctl daemon-reload
+systemctl daem/on-reload
 systemctl start watchlog.timer
