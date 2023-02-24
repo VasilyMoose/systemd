@@ -7,5 +7,5 @@ chmod +x /opt/watchlog.sh
 mv /root/systemd/watchlog/watchlog.timer /etc/systemd/system/
 mv /root/systemd/watchlog/watchlog.service /etc/systemd/system/
 
-systemctl daem/on-reload
+systemctl daemon-reload
 systemctl start watchlog.timer
