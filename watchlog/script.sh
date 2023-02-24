@@ -1,6 +1,6 @@
 #!/bin/bash
 mv /root/systemd/watchlog/watchlog.log /var/log/
-cd /etc/sysconfig/
+
 mv /root/systemd/watchlog/watchlog.sh /opt/
 chmod +x /opt/watchlog.sh
  
