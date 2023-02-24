@@ -38,6 +38,6 @@ Listen ${PORT}
 PidFile ${PID_FILE}
 EOF
 #########################################################
-systemctl daemon-reloa
+systemctl daemon-reload
 systemctl start httpd@httpd1
 systemctl start httpd@httpd2
