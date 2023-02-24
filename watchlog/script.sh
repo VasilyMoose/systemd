@@ -1,4 +1,5 @@
 #!/bin/bash
+mv watchlog /var/log/
 cd /etc/sysconfig/
 cat << EOF > watchlog
 #!/bin/bash
@@ -22,9 +23,9 @@ DATE=`date`
 
 if grep $WORD $LOG &> /dev/null
 then
-	logger "$DATE: I found word, Master!"
+        logger "$DATE: I found word, Master!"
 else
-	exit 0
+        exit 0
 fi
 EOF
 
@@ -44,6 +45,7 @@ Unit=watchlog.service
 
 [Install]
 WantedBy=multi-user.target
+EOF
 ##########################################################
 cat << EOF > watchlog.service
 [Unit]
@@ -53,6 +55,8 @@ Description=My watchlog service
 Type=oneshot
 EnvironmentFile=/etc/sysconfig/watchlog
 ExecStart=/opt/watchlog.sh $WORD $LOG
+EOF
 ##########################################################
-systemctl start watchlog.timer
 
+systemctl daemon-reload
+systemctl start watchlog.timer
