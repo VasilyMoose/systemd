@@ -1,3 +1,4 @@
+#!/bin/bash
 cd /etc/sysconfig/
 cat << EOF > watchlog
 #!/bin/bash
