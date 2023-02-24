@@ -6,4 +6,5 @@
 
 2. yum install epel-release -y && yum install spawn-fcgi php php-climod_fcgid httpd -y
 заходим в каталог и запускаем командой "bash script2.sh" скрипт.
+3. Дополнить unit-файл httpd (он же apache) возможностью запустить несколько инстансов сервера с разными конфигурационными файлами.
 
